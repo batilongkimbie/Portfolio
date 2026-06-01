@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Kimbie Batilong | IT Student Portfolio</title>
+<link rel="stylesheet" href="style.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"/>
+<style>
+  /* Hero takes full viewport minus nav */
+  body { overflow-x: hidden; }
+  main { max-width: 100%; padding: 0; flex: 1; display: flex; flex-direction: column; }
+
+  /* ── HERO ── */
+  .hero {
+    flex: 1;
+    display: flex; align-items: center; justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 0 2.5rem;
+    min-height: calc(100vh - 62px);
+    position: relative;
+    overflow: hidden;
+    background: var(--white);
+  }
+
+  /* Subtle dot-grid background */
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image: radial-gradient(circle, #c8d8ec 1px, transparent 1px);
+    background-size: 32px 32px;
+    opacity: 0.45;
+    z-index: 0;
+  }
+
+  /* Soft blue glow blob */
+  .hero::after {
+    content: '';
+    position: absolute;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(106,63,181,0.12) 0%, transparent 70%);
+    top: 50%; left: 50%;
+    transform: translate(-50%, -60%);
+    z-index: 0;
+  }
+
+  .hero-inner { position: relative; z-index: 1; max-width: 1080px; display: flex; align-items: center; gap: 3.5rem; justify-content: center; }
+
+  .hero-avatar {
+    width: 260px; height: 260px; border-radius: 50%;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--navy-mid), var(--accent));
+    display: flex; align-items: center; justify-content: center;
+    margin: 0;
+    box-shadow: 0 14px 48px rgba(106,63,181,0.22);
+  }
+  .hero-avatar img {
+    width: 100%; height: 100%; object-fit: cover;
+    display: block;
+  }
+  .hero-copy { max-width: 600px; text-align: left; }
+
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: var(--accent-light); color: var(--tag-text);
+    font-size: 14px; font-weight: 500;
+    padding: 6px 16px; border-radius: 20px;
+    margin-bottom: 1.25rem; border: 0.5px solid rgba(106,63,181,0.2);
+  }
+  .hero-badge::before { content: '●'; font-size: 8px; color: var(--accent); }
+
+  .hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2.6rem, 5.5vw, 3.8rem);
+    line-height: 1.15; color: var(--navy);
+    margin-bottom: 0.5rem;
+  }
+  .hero h1 em { font-style: italic; color: var(--accent); }
+
+  .hero-tagline {
+    font-size: clamp(1.1rem, 2.2vw, 1.55rem);
+    font-weight: 500;
+    color: var(--accent);
+    margin: 0 0 1.5rem;
+    letter-spacing: 0.02em;
+  }
+
+  .hero-desc {
+    font-size: 18px; color: var(--muted);
+    max-width: 520px; margin: 0 0 2rem;
+    line-height: 1.8;
+  }
+
+  .hero-actions { display: flex; gap: 1rem; justify-content: flex-start; flex-wrap: wrap; }
+
+  /* ── SCROLL HINT ── */
+  .scroll-hint {
+    position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+    display: flex; flex-direction: column; align-items: center; gap: 6px;
+    color: var(--muted); font-size: 13.5px; letter-spacing: .6px;
+    text-transform: uppercase; z-index: 1; animation: bounce 2s infinite;
+  }
+  .scroll-hint svg { width: 20px; height: 20px; stroke: var(--muted); fill: none; stroke-width: 2; }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(6px); }
+  }
+
+  /* ── STATS STRIP ── */
+  .stats-strip {
+    display: flex; justify-content: center; gap: 3rem;
+    padding: 2.5rem 3rem;
+    border-top: 0.5px solid var(--border);
+    background: var(--surface);
+  }
+  .stat { text-align: center; }
+  .stat-number {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2.4rem; color: var(--navy); display: block;
+  }
+  .stat-label { font-size: 13.5px; color: var(--muted); margin-top: .2rem; }
+
+  @media (max-width: 860px) {
+    .hero-inner { flex-direction: column; gap: 2rem; }
+    .hero-avatar { width: 180px; height: 180px; }
+    .hero-copy { text-align: center; }
+    .hero-desc { max-width: 100%; }
+    .hero-actions { gap: .85rem; }
+  }
+
+  @media (max-width: 640px) {
+    .stats-strip { gap: 1.5rem; padding: 1.5rem; }
+    .stat-number { font-size: 1.6rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">KimB.</a>
+  <ul class="nav-links">
+    <li><a href="about.html">About</a></li>
+    <li><a href="skills.html">Skills</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<main>
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-avatar"><img src="img/1x1 pic.jpg" alt="Kimbie Batilong"></div>
+      <div class="hero-copy">
+        <div class="hero-badge">IT Student &nbsp;·&nbsp; Web Development &nbsp;·&nbsp; Panabo City</div>
+        <h1>Hi, I'm <em>Kimbie Batilong</em></h1>
+        <p class="hero-tagline">Developing for the Web.</p>
+        <p class="hero-desc">
+          A passionate IT student crafting clean, functional websites and web apps —
+          one school project at a time. Always learning, always building.
+        </p>
+        <div class="hero-actions">
+          <a href="projects.html" class="btn btn-primary">View My Projects</a>
+          <a href="about.html" class="btn btn-outline">Learn About Me</a>
+          <a href="contact.html" class="btn btn-outline">Get In Touch</a>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-hint">
+      <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+    </div>
+  </section>
+
+  <div class="stats-strip">
+    <div class="stat">
+      <span class="stat-number">3</span>
+      <div class="stat-label">School Projects</div>
+    </div>
+    <div class="stat">
+      <span class="stat-number">0</span>
+      <div class="stat-label">Goal: Land a part-time role</div>
+    </div>
+  </div>
+</main>
+
+<footer>Designed &amp; built by Kimbie Batilong · IT Student · Panabo City, Philippines</footer>
+
+</body>
+</html>

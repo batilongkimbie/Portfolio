@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>About | Kimbie Batilong</title>
+<link rel="stylesheet" href="style.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"/>
+<style>
+  .about-layout {
+    display: grid;
+    grid-template-columns: 360px 1fr;
+    gap: 3.5rem;
+    align-items: start;
+  }
+
+  /* Left: identity card */
+  .identity-card {
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: 16px;
+    padding: 2.6rem;
+    text-align: center;
+    position: sticky; top: 80px;
+    width: 100%;
+    max-width: 360px;
+  }
+  .id-avatar {
+    width: 140px; height: 140px; border-radius: 50%;
+    overflow: hidden; margin: 0 auto 1rem;
+    display: flex; align-items: center; justify-content: center;
+    background: var(--surface);
+  }
+  .id-avatar img {
+    width: 100%; height: 100%; object-fit: cover;
+    display: block;
+  }
+  .id-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.7rem; color: var(--navy); margin-bottom: .25rem;
+  }
+  .id-role { font-size: 14px; color: var(--muted); margin-bottom: 1.25rem; }
+  .id-divider { border: none; border-top: 0.5px solid var(--border); margin: 1rem 0; }
+  .id-row { display: flex; justify-content: space-between; font-size: 15px; padding: .5rem 0; }
+  .id-row .label { color: var(--muted); }
+  .id-row .value { font-weight: 500; color: var(--text); text-align: right; }
+
+  /* Right: bio content */
+  .bio-section { margin-bottom: 2.5rem; }
+  .bio-section h3 {
+    font-size: 15px; font-weight: 600; color: var(--accent);
+    margin-bottom: .85rem; text-transform: uppercase;
+    letter-spacing: .8px;
+  }
+  .bio-section p { color: var(--muted); line-height: 1.8; margin-bottom: .85rem; }
+
+  /* Info grid */
+  .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .info-item {
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: 12px; padding: 1rem 1.25rem;
+    min-height: 108px;
+  }
+  .info-item .label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .6px; margin-bottom: .3rem; }
+  .info-item .value { font-size: 14.5px; font-weight: 500; color: var(--text); }
+
+  /* Timeline */
+  .timeline { list-style: none; position: relative; padding-left: 1.5rem; }
+  .timeline::before {
+    content: ''; position: absolute; left: 0; top: 6px; bottom: 6px;
+    width: 1.5px; background: var(--border);
+  }
+  .timeline li { position: relative; padding-bottom: 1.5rem; }
+  .timeline li::before {
+    content: ''; position: absolute; left: -1.5rem; top: 6px;
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--accent); border: 2px solid white;
+    box-shadow: 0 0 0 1.5px var(--accent);
+    transform: translateX(-3px);
+  }
+  .tl-year { font-size: 12.5px; color: var(--accent); font-weight: 600; margin-bottom: .2rem; }
+  .tl-title { font-weight: 500; color: var(--navy); font-size: 15.5px; margin-bottom: .2rem; }
+  .tl-sub { font-size: 14px; color: var(--muted); }
+
+  @media (max-width: 680px) {
+    .about-layout { grid-template-columns: 1fr; }
+    .identity-card { position: static; }
+    .info-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">KimB.</a>
+  <ul class="nav-links">
+    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="skills.html">Skills</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<main>
+  <div class="page-header">
+    <div class="page-label">About Me</div>
+    <div class="page-title">Who I Am</div>
+  </div>
+
+  <div class="about-layout">
+
+    <!-- Left column -->
+    <div class="identity-card">
+      <div class="id-avatar">
+        <img src="img/1x1 pic.jpg" alt="Kimbie Batilong" />
+      </div>
+      <div class="id-name">Kimbie Batilong</div>
+      <div class="id-role">IT Student</div>
+      <hr class="id-divider"/>
+      <div class="id-row"><span class="label">University</span><span class="value">Davao del Norte State College</span></div>
+      <div class="id-row"><span class="label">Program</span><span class="value">BS Information Technology</span></div>
+      <div class="id-row"><span class="label">Year</span><span class="value">2nd Year</span></div>
+      <div class="id-row"><span class="label">Location</span><span class="value">Panabo City, PH</span></div>
+    </div>
+
+    <!-- Right column -->
+    <div>
+      <div class="bio-section">
+        <h3>Background</h3>
+        <p>
+          Hi, I'm Kimbie Batilong, a Bachelor of Science in Information Technology student with experience in both front-end and back-end development. Throughout my academic projects, I have often taken on the role of designing and developing user interfaces while also contributing to application logic and database integration. I enjoy building practical solutions, learning new technologies, and continuously improving my skills as a developer.
+        </p>
+        <p>
+          I'm still early in my journey, but I bring curiosity, determination, and a willingness
+          to learn fast. Every project — no matter how small — teaches me something new.
+        </p>
+      </div>
+
+      <div class="bio-section">
+        <h3>Details</h3>
+        <div class="info-grid">
+          <div class="info-item">
+            <div class="label">Program</div>
+            <div class="value">BS Information Technology</div>
+          </div>
+          <div class="info-item">
+            <div class="label">University</div>
+            <div class="value">Davao del Norte State College</div>
+          </div>
+          <div class="info-item">
+            <div class="label">Year Level</div>
+            <div class="value">2nd Year Student</div>
+          </div>
+          <div class="info-item">
+            <div class="label">Expected Graduation</div>
+            <div class="value">2028</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bio-section">
+        <h3>Education Timeline</h3>
+        <ul class="timeline">
+          <li>
+            <div class="tl-year">2024 – Present</div>
+            <div class="tl-title">BS Information Technology</div>
+            <div class="tl-sub">Davao del Norte State College, Panabo City</div>
+          </li>
+          <li>
+            <div class="tl-year">2022 – 2024</div>
+            <div class="tl-title">Senior High School – ICT Strand</div>
+            <div class="tl-sub">Panabo City National High School</div>
+          </li>
+        </ul>
+      </div>
+
+      <div style="margin-top:1rem;">
+        <a href="projects.html" class="btn btn-primary">See My Projects →</a>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer>Designed &amp; built by Kimbie Batilong · IT Student · Panabo City, Philippines</footer>
+
+</body>
+</html>

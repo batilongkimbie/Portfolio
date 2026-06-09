@@ -89,6 +89,7 @@
   }
 
   .hero-actions { display: flex; gap: 1rem; justify-content: flex-start; flex-wrap: wrap; }
+  .btn { justify-content: center; text-align: center; }
 
   .scroll-hint {
     position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
@@ -129,6 +130,11 @@
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: .85rem;
+      margin-bottom: 6rem;
+      justify-items: stretch;
+    }
+    .hero-actions .btn {
+      width: 100%;
     }
     .hero-actions .btn-primary { grid-column: 1 / -1; }
 

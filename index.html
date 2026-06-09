@@ -3,15 +3,13 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Kimbie Batilong | IT Student Portfolio</title>
+<title>Kimbie Batilong | Student Portfolio</title>
 <link rel="stylesheet" href="style.css"/>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"/>
 <style>
-  /* Hero takes full viewport minus nav */
   body { overflow-x: hidden; }
   main { max-width: 100%; padding: 0; flex: 1; display: flex; flex-direction: column; }
 
-  /* ── HERO ── */
   .hero {
     flex: 1;
     display: flex; align-items: center; justify-content: center;
@@ -24,7 +22,6 @@
     background: var(--white);
   }
 
-  /* Subtle dot-grid background */
   .hero::before {
     content: '';
     position: absolute; inset: 0;
@@ -34,7 +31,6 @@
     z-index: 0;
   }
 
-  /* Soft blue glow blob */
   .hero::after {
     content: '';
     position: absolute;
@@ -69,7 +65,6 @@
     padding: 6px 16px; border-radius: 20px;
     margin-bottom: 1.25rem; border: 0.5px solid rgba(106,63,181,0.2);
   }
-  .hero-badge::before { content: '●'; font-size: 8px; color: var(--accent); }
 
   .hero h1 {
     font-family: 'DM Serif Display', serif;
@@ -95,7 +90,6 @@
 
   .hero-actions { display: flex; gap: 1rem; justify-content: flex-start; flex-wrap: wrap; }
 
-  /* ── SCROLL HINT ── */
   .scroll-hint {
     position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
     display: flex; flex-direction: column; align-items: center; gap: 6px;
@@ -109,7 +103,6 @@
     50% { transform: translateX(-50%) translateY(6px); }
   }
 
-  /* ── STATS STRIP ── */
   .stats-strip {
     display: flex; justify-content: center; gap: 3rem;
     padding: 2.5rem 3rem;
@@ -132,6 +125,13 @@
   }
 
   @media (max-width: 640px) {
+    .hero-actions {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: .85rem;
+    }
+    .hero-actions .btn-primary { grid-column: 1 / -1; }
+
     .stats-strip { gap: 1.5rem; padding: 1.5rem; }
     .stat-number { font-size: 1.6rem; }
   }
@@ -140,7 +140,7 @@
 <body>
 
 <nav>
-  <a href="index.html" class="nav-logo">KimB.</a>
+  <a href="index.html" class="nav-logo">Kimbie</a>
   <ul class="nav-links">
     <li><a href="about.html">About</a></li>
     <li><a href="skills.html">Skills</a></li>
